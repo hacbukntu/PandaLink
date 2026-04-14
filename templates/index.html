@@ -1,0 +1,17 @@
+{% include "cabesera.html" %} 
+
+<form method="POST">
+<input name="url" placeholder="Pega tu link aquí">
+<button>Acortar</button>
+</form>
+<div class="ads mid">ANUNCIO CENTRAL GRANDE</div>
+
+
+{% if short_link %}
+<div class="result">
+<p>Tu link:</p>
+<input value="{{short_link}}" readonly>
+</div>
+{% endif %}
+
+{% include "pie.html" %} 

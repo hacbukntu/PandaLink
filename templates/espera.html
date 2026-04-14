@@ -1,0 +1,48 @@
+{% include "cabesera.html" %} 
+
+
+
+
+<script>
+let t=5;
+function start(){
+let span=document.getElementById("t");
+let btn=document.getElementById("btn");
+let i=setInterval(()=>{
+t--;
+span.innerHTML=t;
+if(t<=0){
+clearInterval(i);
+btn.style.display="block";
+}
+},1000);
+}
+window.onload=start;
+</script>
+</head>
+<body>
+
+
+<div class="container">
+
+<h2>Espera <span id="t">5</span> segundos</h2>
+<div class="ads mid">ANUNCIO CENTRAL (ADSENSE)</div>
+<!-- BOTON justo debajo del contador -->
+<div style="width:100%; text-align:center; ">
+    <button id="btn"
+        class="btn btn-warning"
+        style="display:none; margin-top:20px;"
+        onclick="window.location='/go?url={{url}}'">
+        Ir al enlace
+    </button>
+</div>
+
+<div class="ads mid">ANUNCIO CENTRAL (ADSENSE)</div>
+<div class="ads mid">VIDEO / POP / BANNER</div>
+
+</div>
+
+<div class="ads bottom">ANUNCIO ABAJO</div>
+<div class="ads bottom">SCRIPT EXTRA</div>
+
+{% include "pie.html" %} 
