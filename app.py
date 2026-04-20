@@ -65,4 +65,4 @@ if __name__ == "__main__":
     c.execute("CREATE TABLE IF NOT EXISTS links (id INTEGER PRIMARY KEY, codigo TEXT, url TEXT, clicks INTEGER)")
     conn.commit()
     conn.close()
-    app.run(debug=True)
+    app.run()
