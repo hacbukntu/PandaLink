@@ -59,10 +59,11 @@ def contacto():
 def sobre():
     return render_template("sobre.html")
 
+conn = db()
+c = conn.cursor()
+c.execute("CREATE TABLE IF NOT EXISTS links (id INTEGER PRIMARY KEY, codigo TEXT, url TEXT, clicks INTEGER)")
+conn.commit()
+conn.close()
+
 if __name__ == "__main__":
-    conn = db()
-    c = conn.cursor()
-    c.execute("CREATE TABLE IF NOT EXISTS links (id INTEGER PRIMARY KEY, codigo TEXT, url TEXT, clicks INTEGER)")
-    conn.commit()
-    conn.close()
     app.run()
